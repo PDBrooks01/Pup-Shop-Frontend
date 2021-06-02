@@ -1,4 +1,10 @@
 <router-outlet> </router-outlet>
-
-<hr>
-<app-server></app-server>
+<div class="login" [hidden] = true>
+  <app-login></app-login>
+</div>
+<div class="signup" [hidden] = true>
+  <app-signup></app-signup>
+</div>
+<div class="cart-container" [hidden]=true>
+  <app-cart></app-cart>
+</div>

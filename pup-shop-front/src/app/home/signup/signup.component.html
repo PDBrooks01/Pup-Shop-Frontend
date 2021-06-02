@@ -1,0 +1,21 @@
+<div class = container>
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" method="post">
+      <div class ="user-forms">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name"
+          required >
+        <!-- <div [hidden]="first_name.valid" class = "alert">
+          First name is required...
+        </div> -->
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" placeholder="Doe">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="abc@123.com">
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        <input type="submit" value="Sign Up!">
+      </div>
+    </form>
+  </div>
+</div>
