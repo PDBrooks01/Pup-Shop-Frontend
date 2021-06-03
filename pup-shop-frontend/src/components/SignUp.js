@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Register extends Component {
+export default class SignUp extends Component {
   state = {
     first_name: "",
     last_name: "",
@@ -24,7 +24,7 @@ export default class Register extends Component {
       password: this.state.password,
     }
     try{
-      const response = await fetch(`http://localhost:3003` + '/auth/signup',{
+      const response = await fetch('http://localhost:3003/auth/signup',{
         method: "POST",
         body:JSON.stringify(user),
         headers:{
