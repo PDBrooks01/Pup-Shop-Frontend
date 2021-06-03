@@ -1,1 +1,7 @@
-<p>products works!</p>
+<div class="row">
+  <a href="/home/{{product.id}}" class="listofproducts" *ngFor="let product of products">
+    <h4> {{ product.name }}</h4>
+    <p>{{ product.price }}</p>
+    <img [src]="product.imagePath" alt="{{product.name}}" class='img-responsive' style="max-height: 100px;"/>
+  </a>
+</div>

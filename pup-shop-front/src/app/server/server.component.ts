@@ -1,8 +1,9 @@
-import {Component} from '@angular/core'
-@Component({
-  selector: 'app-server',
-  templateUrl: './server.component.html'
-})
-export class ServerComponent {
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
+@Injectable()
+export class ConfigService {
+  constructor(private http: HttpClient) { }
 }
