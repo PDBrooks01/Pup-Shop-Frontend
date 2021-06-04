@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 export default class Login extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    first_name:"",
+    error: ""
   }
 
   handleChange = (event)=>{
@@ -24,11 +26,19 @@ export default class Login extends Component {
         body:JSON.stringify(user),
         headers:{
           'Content-Type': 'application/json'
-        }
+        },
+        credential: "include"
       })
       if (response.status === 200){
-        console.log('User Logged In!')
+        // console.log('User Logged In!')
+        const currentUser = await response.json()
+        this.props.logIn(currentUser)
         this.props.history.push('/home')
+      }
+      else if (response.status === 401) {
+        this.setState({
+          error: 'Invalid Username or Password'
+        })
       }
     }
     catch (err) {
@@ -43,23 +53,21 @@ export default class Login extends Component {
     })
   }
 
-render(){
-  return(
-    <div className="Login-Container">
-      <h2> Login </h2>
-      <form onSubmit={this.handleSubmit}>
-        <label>Email: </label>
-        <input type='email' name='email' required onChange={this.handleChange} />
-        <br></br>
-        <label>Password: </label>
-        <input type='text' name='password' required onChange={this.handleChange} />
-        <br></br>
-        <input type="submit" value="Login"/>
-      </form>
+  render(){
+    return(
+      <div className="Login-Container">
+        <h2> Login </h2>
+        <form onSubmit={this.handleSubmit}>
+          <label>Email: </label>
+          <input type='email' name='email' required onChange={this.handleChange} />
+          <br></br>
+          <label>Password: </label>
+          <input type='text' name='password' required onChange={this.handleChange} />
+          <br></br>
+          <input type="submit" value="Login"/>
+        </form>
 
-    </div>
-  )
-}
-
-
+      </div>
+    )
+  }
 }
