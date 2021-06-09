@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './css/signup.scss'
 
 export default class SignUp extends Component {
   state = {
@@ -52,22 +53,16 @@ export default class SignUp extends Component {
 
 render(){
   return(
-    <div className="SignUp-Container">
-      <h2> Sign Up </h2>
-      <form onSubmit={this.handleSubmit}>
-        <label>First Name: </label>
-        <input type='text' name='first_name' required onChange={this.handleChange} />
-        <br></br>
-        <label>Last Name: </label>
-        <input type='text' name='last_name' required onChange={this.handleChange} />
-        <br></br>
-        <label>Email: </label>
-        <input type='email' name='email' required onChange={this.handleChange} />
-        <br></br>
-        <label>Password: </label>
-        <input type='text' name='password' required onChange={this.handleChange} />
-        <br></br>
-        <input type="submit" value="Sign Up!"/>
+    <div className="main">
+      <h2 className="sign" align="center"> Sign Up </h2>
+      <form onSubmit={this.handleSubmit} className="form1">
+
+        <input className="un"  placeholder="First Name" align="center" type='text' name='first_name' required onChange={this.handleChange} />
+        <input className="un"  type='text' align="center" name='last_name' placeholder="Last Name" required onChange={this.handleChange} />
+        <input className="un"  type='email' align="center" name='email' placeholder="Email" required onChange={this.handleChange} />
+
+        <input className="pass" align="center"type='text' name='password' placeholder="Password"  required onChange={this.handleChange} />
+        <input className="submit" align="center"type="submit" value="Sign Up!"/>
       </form>
 
     </div>

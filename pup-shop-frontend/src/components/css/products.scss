@@ -1,0 +1,23 @@
+ .container {
+   display:flex
+
+  .product-name {
+      margin-top: 5rem;
+      text-align: center;
+    }
+
+  .product-img img{
+
+    width: 50%;
+    height: 50%;
+  }
+   .price{
+     text-align: left;
+     font-size: 20px;
+   }
+
+  .Add {
+        margin: auto;
+        cursor: pointer;
+      }
+}

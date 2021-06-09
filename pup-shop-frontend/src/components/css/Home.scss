@@ -1,0 +1,29 @@
+.container {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px;
+  column-gap: 10px;
+  row-gap: 15px;
+  box-shadow: 0 1px 4px rgba( 0,0,0,.4);
+  margin: 8px auto;
+
+
+}
+.product {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+  .singleimg{
+    width:5px;
+    height: 5px;
+    }
+
+ul {
+    list-style:none;
+    text-overflow: clip;
+}
+a {
+  text-decoration:none;
+
+}

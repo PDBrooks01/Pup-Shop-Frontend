@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './components/css/index.css';
+import {BrowserRouter} from 'react-router-dom';
+import './components/css/index.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import CartContextProvider from './context/cart-context'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+      <CartContextProvider>
+        <App />
+      </CartContextProvider>
+  </BrowserRouter>,
+
   document.getElementById('root')
 );
 

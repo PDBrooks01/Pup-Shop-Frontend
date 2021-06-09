@@ -1,67 +1,27 @@
-import './css/App.css';
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom'
-import React, { Component } from 'react'
+import './css/App.scss';
+import React from 'react'
+import { Switch, Route} from 'react-router-dom'
 
-import Loading from "./Loading"
+
 import Home from"./Home"
-import Login from "./Login"
-import SignUp from "./SignUp"
+import Layout from "./shared/Layout"
+import CartLanding from './CartLanding'
+import Products from './Products'
 
 
-class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      isLoggedIn: false,
-      currentUser: {}
-    }
-  }
-
-  logIn = (currentUser) =>{
-    this.setState({
-      isLoggedIn:true,
-      currentUser: currentUser
-    })
-  }
-
-  logout = ()=>{
-    this.setState({
-      isLoggedIn: false,
-      currentUser: {}
-    })
-  }
-
-  render(){
-    // console.log(this.state.currentUser);
+function App (){
     return (
-      <BrowserRouter>
-        <div className="navbar">
-          <Link className="PupShop-Logo" to='/home'></Link>
-          {this.state.isLoggedIn
-            ? <div className="loggedInNav">
-              <p>Hello, {this.state.currentUser.userFirstName}!</p>
-              <Link to='/home'>Pup Shop</Link>
-              <Link to='/auth/login' onClick={()=>this.logout()}>Logout</Link>
-              </div>
-            : <div>
-             <Route exact path ="/" render={()=><Loading />} />
-              <Link to='/auth/login'>Login </Link>
-              <Link to='/auth/signup'>Sign Up</Link>
-              </div>
-            }
-        </div>
+      <div>
+        <Layout>
         <Switch>
-          <Route exact path ="/home" render={()=><Loading />} />
-          <Route exact path ="/auth/login" render={(routeProps) => <Login {...routeProps} logIn={this.logIn} />} />
-          <Route exact path ="/auth/signup" render={(routeProps) => <SignUp {...routeProps} />} logIn={this.logIn} />
-          <Route exact path ="/home" render={(routeProps) => this.state.isLoggedIn ? <Home currentUser={this.state.currentUser} /> : <Login {...routeProps} logIn={this.logIn} />} />
+          <Route exact path = '/home' component={Home} />
+          <Route path='/cart' component={CartLanding} />
+          <Route path='/home/:id' component={Products} />
 
         </Switch>
-
-        <Home key={this.props.id}/>
-      </BrowserRouter>
+      </Layout>
+      </div>
     );
-  }
 }
 
 export default App;

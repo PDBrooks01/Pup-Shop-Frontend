@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-
+import "./css/login.scss"
 export default class Login extends Component {
   state = {
     email: "",
     password: "",
     first_name:"",
-    error: ""
+    error: "",
+    isOpen: false
   }
 
   handleChange = (event)=>{
@@ -46,6 +47,7 @@ export default class Login extends Component {
     }
   }
 
+
   componentDidMount() {
     this.setState({
       email:"",
@@ -55,19 +57,17 @@ export default class Login extends Component {
 
   render(){
     return(
-      <div className="Login-Container">
-        <h2> Login </h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email: </label>
-          <input type='email' name='email' required onChange={this.handleChange} />
-          <br></br>
-          <label>Password: </label>
-          <input type='text' name='password' required onChange={this.handleChange} />
-          <br></br>
-          <input type="submit" value="Login"/>
-        </form>
 
+      <div className="main">
+        <h2 className="sign" align="center"> Login </h2>
+        <form onSubmit={this.handleSubmit} className="form1">
+          <input className="un" align="center" type='email' name='email' placeholder="Email" equired onChange={this.handleChange} />
+          <input className="pass" align="center" type='text' name='password' placeholder="Password" required onChange={this.handleChange} />
+          <input className="submit" align="center" type="submit" value="Login"/>
+        </form>
       </div>
+
+
     )
   }
 }

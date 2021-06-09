@@ -1,0 +1,43 @@
+.nav-menu {
+  width:100%;
+  background-color: purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  a{
+    text-decoration: none;
+    &:focus,&:visited {
+      color: black;
+    }
+    &:hover{
+      text-decoration: underline;
+      color: red;
+    }
+  }
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0 1rem;
+  letter-spacing: .5px;
+  a {
+    text-decoration: none;
+    padding: .5rem;
+    &:focus,&:visited {
+      color: black;
+    }
+    &:hover{
+      text-decoration: underline;
+      color: red;
+    }
+  }
+}

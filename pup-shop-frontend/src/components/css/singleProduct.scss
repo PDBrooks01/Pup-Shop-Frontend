@@ -1,0 +1,22 @@
+.container {
+  display:flex
+
+ .product-name {
+     margin-top: 5rem;
+     text-align: center;
+   }
+
+ img{
+   width: 120px;
+   height: 120px;
+ }
+  .price{
+    text-align: left;
+    font-size: 20px;
+  }
+
+ .Add {
+       margin: auto;
+       cursor: pointer;
+     }
+}
