@@ -3,7 +3,7 @@ import "./css/singleProduct.scss"
 
 let baseUrl = ''
 if (process.env.NODE_ENV === 'development') {
-  baseUrl = `http://localhost:3003`
+  baseUrl = ``
 }else{
   baseUrl = 'https://pupshopbackend.herokuapp.com/'
 }
