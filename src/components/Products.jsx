@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import "./css/singleProduct.scss"
 
-let baseUrl = ''
-if (process.env.NODE_ENV === 'development') {
-  baseUrl = ``
-}else{
-  baseUrl = 'https://pupshopbackend.herokuapp.com/'
-}
+let baseUrl = process.env.REACT_APP_BACKENDURL
+
+// if (process.env.NODE_ENV === 'development') {
+//   baseUrl = ``
+// }else{
+//   baseUrl = 'https://pupshopbackend.herokuapp.com/'
+// }
 
 export default class Products extends Component{
   constructor(props){

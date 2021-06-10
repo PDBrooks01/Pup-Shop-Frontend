@@ -3,12 +3,12 @@ import './css/Home.scss'
 import Loading from './Loading'
 
 
-let baseUrl = ''
-if (process.env.NODE_ENV === 'development') {
-  baseUrl = ``
-}else{
-  baseUrl = 'https://pupshopbackend.herokuapp.com/'
-}
+let baseUrl = process.env.REACT_APP_BACKENDURL
+// if (process.env.NODE_ENV === 'development') {
+//   baseUrl = ``
+// }else{
+//   baseUrl = 'https://pupshopbackend.herokuapp.com/'
+// }
 
 export default class Home extends Component {
   constructor(props){
