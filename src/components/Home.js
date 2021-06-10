@@ -6,6 +6,8 @@ import Loading from './Loading'
 let baseUrl = ''
 if (process.env.NODE_ENV === 'development') {
   baseUrl = `http://localhost:3003`
+}else{
+  baseUrl = 'https://pupshopbackend.herokuapp.com/'
 }
 
 export default class Home extends Component {
